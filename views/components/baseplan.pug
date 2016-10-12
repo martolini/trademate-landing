@@ -1,0 +1,40 @@
+extends ../base.pug
+
+block content
+  header#header
+    include navbar.pug
+
+    .container.container-main
+      .row
+        .intro-text.col-xs-10.col-xs-offset-1.col-md-7.col-md-offset-0
+          h1.intro-lead-in
+            block plan_name
+          span.intro-heading
+            block intro_text
+            p
+              | €
+              strong
+                block monthly_price
+              | &nbsp;/ month or
+              | €
+              strong
+                block quarterly_price
+              | &nbsp;/ 3 months
+          .cta
+            btn.btn.btn-primary CREATE ACCOUNT
+        .intro-video.col-xs-10.col-xs-offset-1.col-md-5.col-md-offset-0
+          .browser-mockup
+            block topright_video
+
+  section.product
+    .container-fluid
+      .row
+        .col-xs-12.col-md-5.left
+          .content
+            h4 Requirements
+            p
+              block requirements
+        .col-xs-12.col-md-7.right
+          ul
+            block features
+

@@ -1,0 +1,66 @@
+extends base.pug
+
+block content
+  header#header
+    include components/navbar.pug
+    .container.container-main
+      .row
+        .intro-text.col-xs-10.col-xs-offset-1.col-md-7.col-md-offset-0
+          h1.intro-lead-in We calculate the true odds and identify value
+          span.intro-heading Trademate calculates the true odds of the outcome of a sporting event and provides you with all the tools necessary to identify profitable opportunities in the global sport betting markets.
+          span.intro-heading Trademate was previously known as <strong>edgebet.net</strong>. Read more about how edgebet.net became trademate <a href='http://blog.tradematesports.com/trademate-sports/2016/10/7/introducing-trademate-trading-with-a-difference' target='_blank'>here</a>.
+          .cta
+            btn.btn.btn-primary CREATE ACCOUNT
+        .intro-video.col-xs-10.col-xs-offset-1.col-md-5.col-md-offset-0
+          .browser-mockup
+            img.img-responsive(src='/static/img/analytics.png')
+  section#finding-value
+    .container
+      .row
+        .col-xs-12.col-md-6
+          h2 FINDING THE TRUE ODDS
+          p Often, there is one or a few market leaders on every game that the rest follows. Over the past 5 years, we've worked to identify these market leaders across different sport markets and being able to calculate the true odds in a large range of markets. Because we're able to identify the market leaders and the true odds, we cater to both the <strong>sharp</strong> (sbobet, betISN) and the <strong>soft</strong> (Unibet, William Hill) books.
+          a.btn.btn-primary(href='http://blog.tradematesports.com/trademate-sports/2016/10/11/how-trademate-calculates-the-true-odds-of-a-sporting-event', target='_blank') LEARN MORE ABOUT HOW THE ALGORITHM WORKS
+        .hidden-xs.hidden-sm.col-md-6
+          .browser-mockup
+            img.img-responsive(src='http://blog.edgebet.net/static/img/chelsea_city.png')
+  section
+    .container
+      .row
+        .hidden-xs.hidden-sm.col-md-6
+          .browser-mockup
+            img.img-responsive(src='/static/img/trades.png')
+        .col-xs-12.col-md-6
+          h2 REAL TIME DEVIATIONS
+          p These deviations are presented to you with an edge percentage explaining how big of a deviation it is. You can register the trade with us, and we'll also update your results automatically and do all the bookkeeping for you across different bookmakers. Track your progress with our bankroll management tool, which allows you to set your individual balances and currencies at different bookmakers.
+  section
+    .container
+      .row
+        .col-xs-12.col-md-6
+          h2 ANALYZE AND OPTIMIZE
+          p As well as providing with deviations from the true odds, we give you the tools to analyze your previous trading and optimize your performance. By calculating the true odds at gametime, you can measure your EV at the time you placed the trade, versus the EV at gametime. This should be the true measurement of success. Variance is a part of the game and by using our filtering tools, you can delve into your past trades and figure out where you're getting the most value.
+        .hidden-xs.hidden-sm.col-md-6
+          .browser-mockup
+            img.img-responsive(src='/static/img/analytics_full.png')
+
+  section#plans
+    h2.title OUR PLANS
+    .container
+      a.card-core(href='/core')
+        .icon
+          i.ionicons.ion-code-working
+        h2
+          | TRADEMATE CORE
+          span.pull-right €120/month
+        p Trademate Core is designed as an entry-level value betting tool, that is ideal for building your trading bankroll before moving into the Asian markets or to generate a secondary income.
+      a.card-core(href='/pro')
+        .icon
+          i.ionicons.ionicons.ion-ios-pulse
+        h2
+          | TRADEMATE PRO
+          span.pull-right €400/month
+        p Trademate Pro is designed for the professional/aspiring professional sports bettor or any individual wishing to generate a secondary income from trading in the Asian/Exchange betting markets.
+
+
+block scripts
+  script(src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/1.4.5/numeral.min.js")
