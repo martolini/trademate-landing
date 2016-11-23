@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
+import firebase from 'firebase'
 
 export const app = express()
 
@@ -14,8 +15,14 @@ app.use(cookieParser())
 
 app.use((req, res, next) => {
   if (req.query.ref) {
-    res.cookie('__trademate__affiliate', req.query.ref, {
-      domain: 'tradematesports.com'
+    res.cookie('__trademate__referrer', req.query.ref, {
+      domain: process.env.NODE_ENV === 'production' ? 'tradematesports.com' : 'localhost'
+    })
+    firebase.database().ref('reflinks').child(req.query.ref).transaction(current => {
+      if (current === null) {
+        return { clicks: 1, signups: 0, transactions: 0 }
+      }
+      return Object.assign({}, current, { clicks: current.clicks + 1})
     })
   }
   next()
