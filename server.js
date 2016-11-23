@@ -14,7 +14,9 @@ app.use(cookieParser())
 
 app.use((req, res, next) => {
   if (req.query.ref) {
-    res.cookie('__trademate__affiliate', req.query.ref)
+    res.cookie('__trademate__affiliate', req.query.ref, {
+      domain: 'tradematesports.com'
+    })
   }
   next()
 })
